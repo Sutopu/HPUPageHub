@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import UploadFileForm
 from .models import StudentWebPage
+from django.core.files.storage import FileSystemStorage
 
 def home(request):
     #user selected file to upload and clicked submit
@@ -11,14 +12,12 @@ def home(request):
         form = UploadFileForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponse('woooo we did it!')
         else:
-            return HttpResponse('invalid')
+            return HttpResponse('invalid form')
     else:
         form = UploadFileForm()
-        #this is broken currently. I just want a list of all files without title or author. 
-        #files = [StudentWebPage.objects.all()[i]["file"] for i in range(len(StudentWebPage.objects.all()))]
-    return render(request, 'hub/hub.html', {'form':form, 'files':files})
+        pages = StudentWebPage.objects.all()
+        return render(request, 'hub/hub.html', {'form':form, 'pages':pages})
 
 
 

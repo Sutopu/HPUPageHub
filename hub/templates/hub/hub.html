@@ -6,6 +6,19 @@
     <input type="submit" value="upload">
 </form>
 
-{% for file in files %}
-    fuck
+<table>
+    <thead>
+        <tr>Title</tr>
+        <tr>Author</tr>
+        <tr>Link To Page</tr>
+    </thead>
+    {% for page in pages %}
+        <tr>
+            <td>{{page.title}}</td>
+            <td>{{page.author}}</td>
+            <td><a href="{{page.file.url}}">link</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% for page in pages %}
 {% endfor %}
