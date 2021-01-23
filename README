@@ -1,0 +1,7 @@
+The purpose of this project is to provide a place where my classmates can upload their HTML pages.
+Currently, all it does is allow the user to upload a file to the server.
+
+to run: 
+python3 manage.py runserver
+then, in browser:
+localhost:8000
