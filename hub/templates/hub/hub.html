@@ -1,3 +1,6 @@
+{% extends "hub/main.html" %}
+
+{% block body %}
 <strong>THIS IS THE HUB</strong>
 <hr>
 <form method="POST" enctype="multipart/form-data">
@@ -20,5 +23,4 @@
         </tr>
     {% endfor %}
 </table>
-{% for page in pages %}
-{% endfor %}
+{% endblock %}

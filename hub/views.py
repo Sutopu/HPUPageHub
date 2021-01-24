@@ -14,10 +14,13 @@ def home(request):
             form.save()
         else:
             return HttpResponse('invalid form')
-    else:
-        form = UploadFileForm()
-        pages = StudentWebPage.objects.all()
-        return render(request, 'hub/hub.html', {'form':form, 'pages':pages})
+    form = UploadFileForm()
+    pages = StudentWebPage.objects.all()
+    return render(request, 'hub/hub.html', {'form':form, 'pages':pages})
+
+
+def page(request, pageURL):
+    return render(request, 'hub/page.html', {'pageURL':pageURL})
 
 
 

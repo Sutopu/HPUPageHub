@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 #(this explanation is bad, I should rewrite this at some point.)
 #this is where media is uploaded to. the upload_to parameter when creating a FileField() attribute for a model can be used to create more directories in this directory to 
 #better organize user file uploads.
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'hub')
 
 MEDIA_URL = '/media/'
