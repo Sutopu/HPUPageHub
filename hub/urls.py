@@ -22,10 +22,12 @@ app_name = "hub"
 
 from . import views
 
+#routes URLs to views.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('media/templates/hub/includes/uploads/<pageURL>', views.page, name='page')
+    path('media/templates/hub/includes/uploads/<pageURL>', views.page, name='page'),
+    path('upload/', views.upload, name='upload')
 ]
 
 

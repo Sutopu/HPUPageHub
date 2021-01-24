@@ -1,26 +1,23 @@
 {% extends "hub/main.html" %}
 
 {% block body %}
-<strong>THIS IS THE HUB</strong>
-<hr>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="upload">
-</form>
 
-<table>
-    <thead>
-        <tr>Title</tr>
-        <tr>Author</tr>
-        <tr>Link To Page</tr>
-    </thead>
+<div class="row">
     {% for page in pages %}
-        <tr>
-            <td>{{page.title}}</td>
-            <td>{{page.author}}</td>
-            <td><a href="{{page.file.url}}">link</a></td>
-        </tr>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{page.title}}</span>
+          <h6>Author: {{page.author}}</h6>
+        </div>
+        <div class="card-action">
+          <a href="{{page.file.url}}">Go To Page</a>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-</table>
+  </div>
 {% endblock %}
+
+
+

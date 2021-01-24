@@ -1,5 +1,6 @@
 The purpose of this project is to provide a place where my classmates can upload their HTML pages.
-Currently, all it does is allow the user to upload a file to the server.
+Currently, provides functionality to allow the user to upload an HTML page and browse all uploaded 
+HTML pages.
 
 to run: 
 python3 manage.py runserver
