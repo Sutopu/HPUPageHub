@@ -1,5 +1,5 @@
 {% extends "hub/main.html" %}
-
+<!--this template is used to render HTML pages uploaded by users. Parameter passed is pageURL.-->
 {% block body %}
 <!--this took a bit to find, but this adds the pageURL context to the end of this directory.-->
 {% include "hub/includes/uploads/"|add:pageURL %}

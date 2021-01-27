@@ -24,8 +24,10 @@ from . import views
 
 #routes URLs to views.
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    #one solution to this weird url could be to have my own URL attribute for the StudentWebPage model.
+    #currently, this URL is built from the MEDIA_URL value in settings + the upload_to attribute in the 
+    #StudentWebPage model. 
     path('media/templates/hub/includes/uploads/<pageURL>', views.page, name='page'),
     path('upload/', views.upload, name='upload')
 ]
